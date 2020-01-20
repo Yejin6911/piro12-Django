@@ -1,23 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Blog for Ask company</title>
-</head>
-<body>
-    <h1>Ask Company</h1>
+{% extends "shop/layout.html" %}
+{% block content %}
+    {{ block.super }}
     <form action="" method="GET">
         <input type="text" name="q" value="{{ q }}"/>
-        <input type="submit" value="search" />
+        <input type="submit" value="search"/>
     </form>
     <ul>
         {% for item in item_list %}
-            <li>
+        <li>
+            <a href="/shop/{{ item.id }}">
                 {{item.name}}
-                {{item.price}}
-                {{item.desc}}
-            </li>
+            </a>
+            {{item.price}}
+            {{item.desc}}
+        </li>
         {% endfor %}
     </ul>
-</body>
-</html>
+{% endblock %}
+
+
