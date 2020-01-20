@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -6,7 +7,9 @@
     <style>
         body {background-color: lightpink}
     </style>
-    {% block extra_head %}{% endblock %}
+    {% block extra_head %}
+        <link rel="stylesheet" href=" {% static 'main.css' %}" />
+    {% endblock %}
 </head>
 <body>
     <h1>Ask Company</h1>
@@ -15,6 +18,10 @@
 
     <hr/>
     &copy; 2020. Ask Company.
-    {% block extra_body %}{% endblock %}
+
+
+    {% block extra_body %}
+        <script src="{% static 'main.js' %}"></script>
+    {% endblock %}
 </body>
 </html>
