@@ -1,4 +1,6 @@
 from django.db import models
+from django.urls import reverse
+
 from askcompany.utils import uuid_upload_to
 
 class Item(models.Model):
@@ -12,3 +14,7 @@ class Item(models.Model):
 
     def __str__(self):
         return f'<{self.pk}> {self.name}'
+
+    def get_absolute_url(self):
+        #return reverse('shop: item_detail', args=[self.pk])
+        return reverse('shop: item_detail', kargs={'pk': self.pk})

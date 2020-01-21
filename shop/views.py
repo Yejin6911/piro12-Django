@@ -1,5 +1,5 @@
 from django.http import HttpResponse
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 
 from shop.models import Item
 
@@ -21,7 +21,7 @@ def item_list(request):
     })
 
 def item_detail(request,pk):
-    item = get_object_or_404(Item,pk=pk)
+    item = get_object_or_404(Item, pk=pk)
     return render(request, 'shop/item_detail.html', {
         'item':item,
     })
