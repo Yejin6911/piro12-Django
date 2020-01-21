@@ -17,4 +17,4 @@ class Item(models.Model):
 
     def get_absolute_url(self):
         #return reverse('shop: item_detail', args=[self.pk])
-        return reverse('shop: item_detail', kargs={'pk': self.pk})
+        return reverse('shop:item_detail', kwargs={'pk': self.pk})
